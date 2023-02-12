@@ -1,21 +1,24 @@
 import abc
 
 
-class Deque(metaclass=abc.ABCMeta):
-    '''Deque is a generalization of FIFO Queue and LIFO Queue'''
+class List(metaclass=abc.ABCMeta):
 
     @abc.abstractmethod
-    def add_first(self, value):
+    def size(self):
         raise NotImplementedError
 
     @abc.abstractmethod
-    def remove_first(self):
+    def get(self,position):
         raise NotImplementedError
 
     @abc.abstractmethod
-    def add_last(self, value):
+    def set(self,position,value):
         raise NotImplementedError
 
     @abc.abstractmethod
-    def remove_last(self):
+    def add(self,position,value):
+        raise NotImplementedError
+
+    @abc.abstractmethod
+    def remove(self,position):
         raise NotImplementedError

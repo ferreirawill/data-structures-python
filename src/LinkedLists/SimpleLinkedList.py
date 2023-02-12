@@ -1,6 +1,6 @@
 '''SLL implements Stack and Queue interfaces and the operations push(x), pop(),add(x),remove() has O(1) complexity'''
-from Interfaces.Queue import Queue
-from Interfaces.Stack import Stack
+from src.Interfaces.Queue import Queue
+from src.Interfaces.Stack import Stack
 
 
 class Node:
