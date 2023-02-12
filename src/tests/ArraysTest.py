@@ -1,7 +1,7 @@
 import string
 import unittest
 
-from ArrayLists.ArrayStack import ArrayStack
+from src.ArrayLists.ArrayStack import ArrayStack
 
 
 class ArraysTests(unittest.TestCase):

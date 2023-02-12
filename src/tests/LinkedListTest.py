@@ -2,8 +2,8 @@ import string
 import unittest
 import random
 
-from LinkedLists.DoublyLinkedList import DoublyLinkedList
-from LinkedLists.SimpleLinkedList import LinkedList
+from src.LinkedLists.DoublyLinkedList import DoublyLinkedList
+from src.LinkedLists.SimpleLinkedList import LinkedList
 
 
 class SimpleLinkedListTest(unittest.TestCase):
