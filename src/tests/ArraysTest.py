@@ -4,6 +4,7 @@ import unittest
 from src.ArrayLists.ArrayDeque import ArrayDeque
 from src.ArrayLists.ArrayQueue import ArrayQueue
 from src.ArrayLists.ArrayStack import ArrayStack
+from src.ArrayLists.DualArrayDeque import DualArrayDeque
 
 
 class ArraysStackTests(unittest.TestCase):
@@ -50,3 +51,18 @@ class ArrayDequeTests(unittest.TestCase):
         for idx in range(ard.size()):
             removed = ard.remove(0)
             print(f"REMOVING StackSize: {ard.size()} - Removed: {removed}\nbacking_array: {ard.backing_array}\n")
+
+class DualArrayDequeTests(unittest.TestCase):
+
+    def testDualArrayQueue(self):
+        values = [string.ascii_uppercase[i] for i in range(26)]
+        dard = DualArrayDeque()
+        for idx, value in enumerate(values):
+            dard.add(idx,value)
+            print(f"ADDING StackSize: {dard.size()}- Added: {value}")
+
+        print("\n\n\n---------------------------\n\n\n")
+
+        for idx in range(dard.size()):
+            removed = dard.remove(0)
+            print(f"REMOVING StackSize: {dard.size()} - Removed: {removed}")

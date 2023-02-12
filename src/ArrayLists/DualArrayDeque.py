@@ -16,6 +16,7 @@ class DualArrayDeque(List):
             return self.back.get(position-self.front.size())
 
     def set(self, position, value):
+
         if position < self.front.size():
             return self.front.set(self.front.size()-position-1,value)
         else:
@@ -26,6 +27,8 @@ class DualArrayDeque(List):
             self.front.add(self.front.size()-position,value)
         else:
             self.back.add(position-self.front.size(),value)
+
+        self.__balance()
 
     def remove(self, position):
         if position < self.front.size():
@@ -38,7 +41,7 @@ class DualArrayDeque(List):
 
     def __balance(self):
         length = self.size()
-        mid = length/2
+        mid = length//2
 
         if 3*self.front.size() < self.back.size() or 3*self.back.size() <self.front.size():
             new_ars_front = ArrayStack()
