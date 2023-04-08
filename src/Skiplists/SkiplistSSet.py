@@ -19,7 +19,7 @@ class SkiplistSSet(SSet):
 
     def __init__(self):
         self.height = 0
-        self.length = 0
+        self.size = 0
         self.sentinel = SkiplistSSet.Node(None, height=self.integer_size)
         self.stack = numpy.empty(self.sentinel.height() + 1, object)
 
@@ -53,7 +53,7 @@ class SkiplistSSet(SSet):
         for i in range(len(new_sentinel.next)):
             new_sentinel.next[i] = self.stack[i].next[i]
             self.stack[i].next[i] = new_sentinel
-        self.length += 1
+        self.size += 1
 
         return True
 
@@ -74,7 +74,7 @@ class SkiplistSSet(SSet):
             row -= 1
 
         if removed:
-            self.length -= 1
+            self.size -= 1
 
         return removed
 
@@ -88,10 +88,15 @@ class SkiplistSSet(SSet):
 
         return node
 
-    def __pick_height(self):
+    def __pick_height(self) -> int:
         random_int = random.getrandbits(self.integer_size)
         height = 0
         while random_int & 1:
             height += 1
             random_int = random_int // 2
         return height
+
+
+
+
+
