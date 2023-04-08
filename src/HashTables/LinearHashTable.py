@@ -19,7 +19,7 @@ class LinearHashTable:
                 return self.table[index]
             index = (index + 1) % len(self.table)
 
-    def add(self, item: int):
+    def add(self, item):
         if self.find(item) is not None:
             return False
         if 2 * (self.voids_number + 1) > len(self.table):
@@ -36,7 +36,7 @@ class LinearHashTable:
         self.table[index] = item
         return True
 
-    def remove(self, item: int):
+    def remove(self, item):
         index = self.__hash(item)
 
         while self.table[index] is not None:
@@ -52,7 +52,7 @@ class LinearHashTable:
             index = (index + 1) % len(self.table)
         return None
 
-    def __hash(self, item: int):
+    def __hash(self, item):
         hash_code = hash(item)
         return (self.tabulation_array[hash_code & 0xFF][0] ^ self.tabulation_array[(hash_code >> 8) & 0xFF][1]
                 ^ self.tabulation_array[(hash_code >> 16) & 0xFF][2]

@@ -8,7 +8,6 @@ class ArrayStack(List):
     length = 0
 
     def __init__(self):
-
         self.backing_array = numpy.empty(1, object)
 
     def size(self):

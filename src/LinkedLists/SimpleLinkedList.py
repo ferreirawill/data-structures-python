@@ -3,22 +3,24 @@ from src.Interfaces.Queue import Queue
 from src.Interfaces.Stack import Stack
 
 
-class Node:
-    label = None
-    next = None
-
-    def __init__(self,label):
-        self.label = label
 
 
 class LinkedList(Stack,Queue):
-    head = None
-    tail = None
-    length = 0
+    class Node:
+        label = None
+        next = None
+
+        def __init__(self, label):
+            self.label = label
+
+    def __init__(self):
+        self.head: LinkedList.Node = None
+        self.tail: LinkedList.Node = None
+        self.length = 0
 
     def push(self,label):
         '''Add elements at head'''
-        new_node = Node(label)
+        new_node = self.Node(label)
         new_node.next = self.head
         self.head = new_node
 
@@ -47,7 +49,7 @@ class LinkedList(Stack,Queue):
 
     def add(self,label):
         '''Add elements at tail'''
-        new_node = Node(label)
+        new_node = self.Node(label)
 
         if self.length ==0:
             self.head = new_node
@@ -57,3 +59,16 @@ class LinkedList(Stack,Queue):
         self.tail = new_node
         self.length +=1
         return new_node.label
+
+    def find(self,value):
+        node = self.head
+        list_length = self.length
+
+        while list_length >= 0:
+            if value == node.label:
+                return node.label
+            node = node.next
+
+            list_length -=1
+
+        return None

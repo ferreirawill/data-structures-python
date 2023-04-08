@@ -1,19 +1,19 @@
 '''SLL implements a List interface and the operations get(i), set(i,x),add(i,x),remove(i) run in 0(1+min{i,n-i}) time per operation'''
 
-class Node:
-    label = None
-    previous = None
-    next = None
-
-    def __init__(self, label):
-        self.label = label
 
 
 class DoublyLinkedList:
-    length = 0
-    dummy = Node(None)
+    class Node:
+        label = None
+        previous = None
+        next = None
+
+        def __init__(self, label):
+            self.label = label
 
     def __init__(self):
+        self.length = 0
+        self.dummy = self.Node(None)
         self.dummy.next = self.dummy
         self.dummy.previous = self.dummy
 
@@ -52,7 +52,7 @@ class DoublyLinkedList:
 
     def __add_before(self,node:Node,label):
         '''add node before a given node'''
-        new_node = Node(label)
+        new_node = self.Node(label)
         new_node.previous = node.previous
         new_node.next = node
         new_node.next.previous = new_node
