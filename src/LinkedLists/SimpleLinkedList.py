@@ -5,7 +5,7 @@ from src.Interfaces.Stack import Stack
 
 
 
-class LinkedList(Stack,Queue):
+class SimpleLinkedList(Stack, Queue):
     class Node:
         label = None
         next = None
@@ -14,8 +14,8 @@ class LinkedList(Stack,Queue):
             self.label = label
 
     def __init__(self):
-        self.head: LinkedList.Node = None
-        self.tail: LinkedList.Node = None
+        self.head: SimpleLinkedList.Node = None
+        self.tail: SimpleLinkedList.Node = None
         self.length = 0
 
     def push(self,label):

@@ -1,5 +1,4 @@
 import random
-import timeit
 import unittest
 
 from src.Skiplists.SkiplistList import SkiplistList

@@ -3,14 +3,14 @@ import unittest
 import random
 
 from src.LinkedLists.DoublyLinkedList import DoublyLinkedList
-from src.LinkedLists.SimpleLinkedList import LinkedList
+from src.LinkedLists.SimpleLinkedList import SimpleLinkedList
 
 
 class SimpleLinkedListTest(unittest.TestCase):
 
     def testAddAndPush(self):
         labels = [string.ascii_uppercase[i] for i in range(26)]
-        pushSll = LinkedList()
+        pushSll = SimpleLinkedList()
         print("------------- PUSHING ------------------\n")
         for label in labels:
             a = pushSll.push(label)
@@ -20,7 +20,7 @@ class SimpleLinkedListTest(unittest.TestCase):
 
         print("\n\n------------- ADDING ------------------\n")
 
-        addSll = LinkedList()
+        addSll = SimpleLinkedList()
         for label in labels:
             a = addSll.add(label)
             print(f"Adicionado:{a} | Head.label: {addSll.head.label} | "
@@ -30,7 +30,7 @@ class SimpleLinkedListTest(unittest.TestCase):
 
     def testPushandPop(self):
         labels = [string.ascii_uppercase[i] for i in range(26)]
-        sll = LinkedList()
+        sll = SimpleLinkedList()
         print("------------- ADICIONANDO ------------------\n")
         for label in labels:
             a = sll.push(label)
@@ -56,7 +56,7 @@ class SimpleLinkedListTest(unittest.TestCase):
 
     def testAddAndRemove(self):
         labels = [string.ascii_uppercase[i] for i in range(26)]
-        sll = LinkedList()
+        sll = SimpleLinkedList()
         print("------------- ADICIONANDO ------------------\n")
         for label in labels:
             a = sll.add(label)
